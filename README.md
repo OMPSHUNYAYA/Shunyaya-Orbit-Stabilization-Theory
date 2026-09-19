@@ -1,14 +1,14 @@
 # Shunyaya Orbit Stabilization Theory (SOST)
 
-## Exact orbit classification for the monochromatic-triangle toggle on labeled complete graphs
+## Exact orbit classification for the monochromatic triangle toggle on labeled complete graphs
 
-**Shunyaya Orbit Stabilization Theory (SOST) v1.1.0** proves an exact all-order orbit classification for a reversible, state-dependent graph dynamic.
+**Shunyaya Orbit Stabilization Theory (SOST) v1.1.0** proves an exact orbit classification for a reversible, state-dependent graph dynamic on labeled complete graphs for every `n>=6`.
 
 For a simple graph `G` on `n` labeled vertices, a primitive move selects a vertex triple whose three induced edge bits are monochromatic and toggles all three:
 
 `000 <-> 111`.
 
-For every `n>=6`, the only orbit invariants are:
+For every `n>=6`, orbit equivalence is completely determined by:
 
 `P(G) = vertex degree-parity vector in F_2^n`
 
@@ -22,8 +22,8 @@ Equivalently:
 
 [![Version](https://img.shields.io/badge/Version-1.1.0-blue)](./VERSION)
 [![Theorem](https://img.shields.io/badge/Theorem-All%20n%3E%3D6-brightgreen)](./01_Theory/SOST_Principal_Theorem_v1_1_0.md)
-[![Proof](https://img.shields.io/badge/Proof-Computer--assisted-blue)](./04_Research_Context/SOST_Theorem_Status_v1_1_0.md)
-[![K6 certificate](https://img.shields.io/badge/K6-32%2C768%20states%20%7C%2096%20fibers-brightgreen)](./03_Verification/SOST_K6_Standalone_Certificate_Verifier_v1_1_0.py)
+[![Proof](https://img.shields.io/badge/Proof-Certified%20K6%20base%20%2B%20constructive%20induction-blue)](./04_Research_Context/SOST_Theorem_Status_v1_1_0.md)
+[![K6 certificate](https://img.shields.io/badge/K6-32%2C768%20states%20%7C%2096%20orbits-brightgreen)](./03_Verification/SOST_K6_Standalone_Certificate_Verifier_v1_1_0.py)
 [![K7 holdout](https://img.shields.io/badge/K7-2%2C097%2C152%20states%20%7C%20192%20orbits-brightgreen)](./03_Verification/SOST_Independent_Holdout_n7_v1_1_0.cpp)
 [![Verification](https://img.shields.io/badge/Verification-Reproducible-brightgreen)](./05_Reproduction_and_Verification/SOST_Verification_Scope_v1_1_0.md)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](./05_Reproduction_and_Verification/SOST_Verification_Guide_v1_1_0.md)
@@ -31,25 +31,29 @@ Equivalently:
 
 [![Verify](https://github.com/OMPSHUNYAYA/Shunyaya-Orbit-Stabilization-Theory/actions/workflows/verify.yml/badge.svg)](https://github.com/OMPSHUNYAYA/Shunyaya-Orbit-Stabilization-Theory/actions/workflows/verify.yml)
 
+**In one sentence:** for every `n>=6`, two graph states are reachable from one another exactly when they have the same vertex degree parities and the same number of edges modulo `3`.
+
 ---
 
-## Repository summary
+## Summary
 
-This repository establishes an exact stabilization theorem for monochromatic-triangle toggle dynamics on labeled complete graphs. The central result proves that for every `n>=6`, orbit equivalence is completely determined by the degree-parity vector and edge-count residue modulo `3`. The proof combines an exact `K_6` theorem-base certificate with constructive symbolic compression and induction, while an exhaustive `K_7` computation is retained as an independent holdout rather than a proof premise.
+SOST completely classifies the orbits of the reversible monochromatic triangle toggle on labeled complete graphs for every `n>=6`.
 
-The resulting quotient has the exact form
+The classification is exact:
 
-`Q_n ~= {even parity vectors in F_2^n} x Z_3`,
+`G ~ H  iff  P(G)=P(H) and R(G)=R(H)`,
 
-with
+where `P(G)` is the vertex degree-parity vector and `R(G)=|E(G)| mod 3`.
+
+Consequently,
 
 `|Q_n| = 3*2^(n-1)`
 
-and exact binary growth
+and
 
 `Q_(n+1) ~= Q_n x {0,1}`.
 
-The repository includes the theorem and complete proof, finite certificates, constructive replay, independent exhaustive checks, machine-readable evidence, reproducible verification commands, and explicit claim/provenance boundaries.
+The proof combines a certified `K_6` theorem base with constructive compression and induction. An exhaustive `K_7` computation is retained as an independent holdout. The repository includes the complete proof, finite certificates, constructive replay, software, machine-readable evidence, and reproducible verification.
 
 ---
 
@@ -108,7 +112,7 @@ Every admissible `(P,R)` label occurs in exactly one orbit. From that finite sta
 - even local parity -> isolate a designated vertex;
 - odd local parity -> retain exactly one incident edge to any selected anchor.
 
-Triangle legality depends only on the three edges of the selected triangle, so a certified six-vertex move path embeds unchanged in every larger complete graph. The all-order induction then eliminates one vertex at a time.
+Triangle legality depends only on the three edges of the selected triangle, so a certified six-vertex move path embeds unchanged in every larger complete graph. The induction then eliminates one vertex at a time and propagates the classification to every larger order.
 
 The terminal degree analysis is exhaustive. After repeated reductions by four, the designated degree is at most five. The remaining cases are:
 
@@ -139,7 +143,7 @@ There are exactly `96` roots, one for every admissible `(P,R)` label.
 
 The standalone verifier uses no SOST library code. It checks:
 
-- every parent transition is a legal monochromatic-triangle toggle;
+- every parent transition is a legal monochromatic triangle toggle;
 - every parent transition preserves `(P,R)`;
 - every state reaches exactly one root;
 - the `96` roots have distinct admissible invariant labels;
@@ -152,7 +156,7 @@ This converts the finite theorem premise into a compact, independently checkable
 
 ---
 
-## Constructive all-order replay
+## Constructive induction replay
 
 A separate constructive verifier uses only legal triangle moves plus the certified six-vertex paths to execute the written compression algorithm.
 
@@ -165,7 +169,7 @@ It directly exercises:
 - recursive vertex elimination;
 - canonical reduction at orders `8`, `9`, and `10` on deterministic test corpora.
 
-The replay is verification evidence for the constructive induction. The all-order theorem remains the written proof.
+The replay is verification evidence for the constructive induction. The theorem for all `n>=6` remains the written proof.
 
 [Constructive induction replay](./03_Verification/SOST_Constructive_Induction_Replay_Verifier_v1_1_0.py)
 
@@ -179,7 +183,7 @@ A separate C++17 flood-fill engine checks all:
 
 `2,097,152`
 
-edge-colorings of `K_7` and obtains exactly:
+binary edge states of `K_7` and obtains exactly:
 
 `192 = 3*2^6`
 
@@ -199,7 +203,7 @@ The `K_7` result is an independent falsification test, not a theorem premise.
 
 SOST also records finite-certificate concepts for reversible orbit systems: quotient transport, branching coherence, complete summaries, finite obstruction interfaces, and theorem promotion from finite discovery to symbolic proof.
 
-The graph theorem above is the complete all-order theorem established in this repository. The framework should not be read as claiming that arbitrary reversible systems admit the same invariant structure or stabilization law.
+The graph theorem above is the complete theorem established in this repository for every `n>=6`. The framework should not be read as claiming that arbitrary reversible systems admit the same invariant structure or stabilization law.
 
 [Framework overview](./01_Theory/SOST_Framework_Overview_v1_1_0.md) · [Claim boundary](./04_Research_Context/SOST_Claim_Boundary_v1_1_0.md)
 
@@ -213,7 +217,7 @@ SOST is mathematically self-contained. Its proof does not depend on SSDC or SSDD
 
 `SSDD: structural dynamics -> invariant geometry -> exact classification`
 
-`SOST: reversible local dynamics -> invariant completeness -> stabilized orbit quotient`.
+`SOST: reversible local dynamics -> invariant completeness -> stabilized orbit quotient`
 
 SSDC: https://github.com/OMPSHUNYAYA/Shunyaya-Structural-Discovery-Compiler
 
@@ -227,7 +231,7 @@ The mathematical development is independent of literature comparison.
 
 A focused comparison audit across adjacent categories did not identify a direct match for the complete combination of:
 
-`conditional monochromatic-triangle toggle`
+`conditional monochromatic triangle toggle`
 
 `complete invariant (degree parity, edge count mod 3)`
 
@@ -291,3 +295,12 @@ Software, verification code, workflows, and machine-readable scientific artifact
 Copyright and license terms govern project-authored expression and implementation; they do not assert ownership of mathematical facts, abstract theorem statements, equations, or independently developed proofs.
 
 [Copyright notice](./COPYRIGHT_NOTICE.txt) · [License map](./LICENSE) · [Third-party and provenance notices](./THIRD_PARTY_NOTICES.txt)
+
+---
+
+## Closing perspective
+
+SOST shows that a local, state-dependent reversible rule can admit a complete global orbit classification. For every `n>=6`, the full dynamics reduce exactly to degree parity and edge count modulo `3`, with quotient size `3*2^(n-1)` and exact growth `Q_(n+1) ~= Q_n x {0,1}`.
+
+The result connects finite certification, constructive reduction, invariant completeness, and independent verification in a single reproducible theorem chain.
+
