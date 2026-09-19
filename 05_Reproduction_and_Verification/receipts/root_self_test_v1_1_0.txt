@@ -1,0 +1,40 @@
+integrity_manifest:PASS
+python_sources_compile:PASS
+json_parse:PASS
+artifact_hygiene:PASS
+SOST v1.1.0 theorem-core self-test
+five_vertex_realization:PASS:labels=48
+six_vertex_complete_partition:PASS:states=32768:components=96:labels=96
+compression_targets:PASS:isolation=288:anchored=1440
+recursive_sections:PASS:orders=6..10:checks=2976
+TOTAL 4/4 PASS
+theorem_core_verifier:PASS
+SOST K6 standalone certificate verifier v1.1.0
+legal_parent_forest:PASS:states=32768:roots=96:parent_edges=32672
+invariant_fibers:PASS:admissible_labels=96:unique_roots=96
+parent_termination:PASS:max_declared_depth=9
+TOTAL 3/3 PASS
+k6_standalone_certificate_verifier:PASS
+SOST constructive induction replay verifier v1.1.0
+degree5_anchor_absent:PASS:legal_moves=12
+constructive_orders:PASS:orders=8,9,10:states=288:same_key_comparisons=20
+legal_move_replay:PASS:moves=8303:special_branches=37
+canonical_invariant_separation:PASS
+TOTAL 4/4 PASS
+constructive_induction_replay_verifier:PASS
+SOST v1.1.0 proof-rigor verification
+proof_dependency_dag:PASS:nodes=9:cycles=0
+holdout_dependency:PASS:n7_holdout_not_in_proof_dag=YES
+embedding_locality_schema:PASS:checks=560
+degree_reduction_measure:PASS:initial_degrees_checked=65
+terminal_case_exhaustiveness:PASS:degrees=0..5:cases=6
+degree5_anchor_absent_branch:PASS:explicit_separate_case=YES
+labeled_state_boundary:PASS:vertex_relabeling_not_quotiented
+TOTAL 7/7 PASS
+proof_rigor_audit_verifier:PASS
+SOST v1.1.0 independent partition verifier
+boundary_floodfill:PASS:states=33864:counts=3:7,4:32,5:59,6:96
+TOTAL 1/1 PASS
+independent_classification_verifier:PASS
+status:PASS
+checks_passed:9/9

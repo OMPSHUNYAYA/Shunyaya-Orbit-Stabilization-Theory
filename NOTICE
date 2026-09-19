@@ -1,0 +1,11 @@
+Shunyaya Orbit Stabilization Theory (SOST)
+Research Package v1.1.0
+Copyright 2026 Shunyaya Framework contributors.
+
+This repository contains project-authored mathematical exposition, a complete written computer-assisted proof, exact verification software, a standalone finite theorem-base certificate, machine-readable scientific artifacts, research-context documentation, and reproducibility infrastructure.
+
+SOST v1.1.0 proves an exact all-order classification for the monochromatic-triangle toggle dynamic on labeled complete-graph edge-colorings for `n>=6`.
+
+The repository uses category-specific licensing. See LICENSE and the complete local license texts under LICENSES/.
+
+Research comparison under `04_Research_Context/` is category-level and non-bibliographic. It does not reproduce third-party research text, figures, tables, datasets, or software source.

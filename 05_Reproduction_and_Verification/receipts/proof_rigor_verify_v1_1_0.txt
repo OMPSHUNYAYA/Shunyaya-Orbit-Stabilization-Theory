@@ -1,0 +1,9 @@
+SOST v1.1.0 proof-rigor verification
+proof_dependency_dag:PASS:nodes=9:cycles=0
+holdout_dependency:PASS:n7_holdout_not_in_proof_dag=YES
+embedding_locality_schema:PASS:checks=3800
+degree_reduction_measure:PASS:initial_degrees_checked=257
+terminal_case_exhaustiveness:PASS:degrees=0..5:cases=6
+degree5_anchor_absent_branch:PASS:explicit_separate_case=YES
+labeled_state_boundary:PASS:vertex_relabeling_not_quotiented
+TOTAL 7/7 PASS

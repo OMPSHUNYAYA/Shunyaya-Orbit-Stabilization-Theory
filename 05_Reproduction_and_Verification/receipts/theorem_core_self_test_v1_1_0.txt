@@ -1,0 +1,6 @@
+SOST v1.1.0 theorem-core self-test
+five_vertex_realization:PASS:labels=48
+six_vertex_complete_partition:PASS:states=32768:components=96:labels=96
+compression_targets:PASS:isolation=288:anchored=1440
+recursive_sections:PASS:orders=6..10:checks=2976
+TOTAL 4/4 PASS

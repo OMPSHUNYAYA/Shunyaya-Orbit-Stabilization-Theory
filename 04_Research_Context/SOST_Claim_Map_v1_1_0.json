@@ -1,0 +1,33 @@
+{
+  "boundary": {
+    "3": "complete_on_realized_labels",
+    "4": "incomplete",
+    "5": "incomplete",
+    "6+": "complete"
+  },
+  "finite_theorem_base": {
+    "fibers": 96,
+    "order": 6,
+    "standalone_certificate": true,
+    "states": 32768
+  },
+  "historical_priority": "not_claimed",
+  "independent_holdout": {
+    "components": 192,
+    "order": 7,
+    "proof_dependency": false,
+    "states": 2097152
+  },
+  "orbit_count": "3*2^(n-1)",
+  "principal_theorem": {
+    "complete_invariant": [
+      "degree parity vector",
+      "edge count mod 3"
+    ],
+    "domain": "labeled graphs n>=6",
+    "move": "monochromatic triangle 000<->111"
+  },
+  "proof_assistant_formalization": "not_claimed",
+  "quotient_growth": "Q_(n+1) ~= Q_n x {0,1}",
+  "version": "1.1.0"
+}

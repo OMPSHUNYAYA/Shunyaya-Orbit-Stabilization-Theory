@@ -1,0 +1,78 @@
+{
+  "nodes": [
+    {
+      "depends_on": [],
+      "id": "invariants",
+      "type": "symbolic"
+    },
+    {
+      "depends_on": [],
+      "id": "five_vertex_realization",
+      "type": "constructive_finite"
+    },
+    {
+      "depends_on": [],
+      "id": "six_vertex_completeness",
+      "type": "exhaustive_finite_certificate"
+    },
+    {
+      "depends_on": [
+        "five_vertex_realization",
+        "six_vertex_completeness"
+      ],
+      "id": "six_vertex_compression",
+      "type": "derived"
+    },
+    {
+      "depends_on": [
+        "six_vertex_compression"
+      ],
+      "id": "embedded_compression",
+      "type": "symbolic"
+    },
+    {
+      "depends_on": [
+        "embedded_compression"
+      ],
+      "id": "termination_and_terminal_cases",
+      "type": "symbolic"
+    },
+    {
+      "depends_on": [
+        "invariants",
+        "termination_and_terminal_cases",
+        "six_vertex_completeness"
+      ],
+      "id": "all_order_classification",
+      "type": "symbolic_induction"
+    },
+    {
+      "depends_on": [
+        "all_order_classification"
+      ],
+      "id": "orbit_count",
+      "type": "symbolic"
+    },
+    {
+      "depends_on": [
+        "orbit_count",
+        "embedded_compression"
+      ],
+      "id": "binary_growth",
+      "type": "symbolic"
+    },
+    {
+      "depends_on": [
+        "six_vertex_completeness"
+      ],
+      "id": "constructive_replay",
+      "type": "verification_only"
+    },
+    {
+      "depends_on": [],
+      "id": "n7_holdout",
+      "type": "verification_only"
+    }
+  ],
+  "version": "1.1.0"
+}

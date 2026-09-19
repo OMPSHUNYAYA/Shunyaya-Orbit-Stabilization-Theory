@@ -1,0 +1,10 @@
+SOST v1.1.0 theorem-core verification
+boundary_exact_partition:PASS:states=33864:counts=3:7,4:32,5:59,6:96
+permanent_completeness_threshold:PASS:n3=COMPLETE:n4,n5=INCOMPLETE:n>=6=COMPLETE
+five_vertex_realization:PASS:labels=48
+six_vertex_complete_partition:PASS:states=32768:components=96:labels=96
+compression_targets:PASS:isolation=288:anchored=1440
+recursive_sections:PASS:orders=6..12:checks=12192
+orbit_count_formula:PASS:classes=3*2^(n-1)
+binary_quotient_growth:PASS:Q_(n+1)=Q_n_x_2
+TOTAL 8/8 PASS

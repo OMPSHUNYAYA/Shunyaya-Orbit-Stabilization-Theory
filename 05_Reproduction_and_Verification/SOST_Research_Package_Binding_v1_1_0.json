@@ -1,0 +1,48 @@
+{
+  "complete_invariant": [
+    "degree parity vector",
+    "edge count mod 3"
+  ],
+  "compression_targets": {
+    "anchored": 1440,
+    "isolation": 288
+  },
+  "computational_integrity_file": "05_Reproduction_and_Verification/SOST_Computational_Integrity_SHA256_v1_1_0.txt",
+  "constructive_replay_orders": [
+    8,
+    9,
+    10
+  ],
+  "finite_base": {
+    "components": 96,
+    "order": 6,
+    "states": 32768
+  },
+  "finite_base_certificate": {
+    "format": "SOST-K6-spanning-forest-certificate-v1",
+    "max_depth": 9,
+    "parent_edges": 32672,
+    "roots": 96,
+    "states": 32768
+  },
+  "historical_priority": "not_claimed",
+  "independent_holdout": {
+    "components": 192,
+    "legal_state_triangle_checks": 18350080,
+    "order": 7,
+    "states": 2097152
+  },
+  "integrity_scope": {
+    "algorithm": "SHA-256",
+    "bound_artifacts": "computational source, machine-readable scientific data, certificates, and package-binding JSON",
+    "editable_explanatory_documents_hash_bound": false,
+    "license_notice_manifest_text_hash_bound": false,
+    "verification_receipts_hash_bound": false
+  },
+  "orbit_count": "3*2^(n-1)",
+  "principal_theorem": "monochromatic triangle toggle classification for labeled n>=6",
+  "project": "Shunyaya Orbit Stabilization Theory",
+  "proof_assistant_formalization": "not_claimed",
+  "quotient_growth": "Q_(n+1) ~= Q_n x {0,1}",
+  "version": "1.1.0"
+}

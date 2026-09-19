@@ -1,0 +1,6 @@
+SOST K6 standalone certificate verifier v1.1.0
+legal_parent_forest:PASS:states=32768:roots=96:parent_edges=32672
+invariant_fibers:PASS:admissible_labels=96:unique_roots=96
+parent_termination:PASS:max_declared_depth=9
+compression_targets:PASS:isolation=288:anchored=1440
+TOTAL 4/4 PASS

@@ -1,0 +1,15 @@
+{
+  "bibliography_in_repository": false,
+  "categories": [
+    "monochromatic structure in edge-colored complete graphs",
+    "constrained graph reconfiguration",
+    "switching and complementation dynamics",
+    "binary graph invariants and finite-state toggle systems",
+    "finite partition, certification, and synthesis methods"
+  ],
+  "focused_comparison_direct_match_identified": false,
+  "historical_priority_claim": "none",
+  "novelty_signal": "strong",
+  "proof_dependency_on_comparison": false,
+  "version": "1.1.0"
+}

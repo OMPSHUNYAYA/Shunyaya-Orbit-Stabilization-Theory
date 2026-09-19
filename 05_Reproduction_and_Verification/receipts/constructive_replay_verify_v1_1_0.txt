@@ -1,0 +1,6 @@
+SOST constructive induction replay verifier v1.1.0
+degree5_anchor_absent:PASS:legal_moves=12
+constructive_orders:PASS:orders=8,9,10:states=768:same_key_comparisons=127
+legal_move_replay:PASS:moves=22080:special_branches=100
+canonical_invariant_separation:PASS
+TOTAL 4/4 PASS

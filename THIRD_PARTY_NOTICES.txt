@@ -1,0 +1,27 @@
+SHUNYAYA ORBIT STABILIZATION THEORY (SOST)
+THIRD-PARTY AND PROVENANCE NOTICES
+Repository version 1.1.0
+
+1. Project-authored scope
+
+The theorem exposition, proof documentation, verification software, machine-readable scientific records, notices, and repository configuration are project-authored unless a file explicitly states otherwise.
+
+2. Runtime dependencies
+
+The Python paths use only the Python standard library. Complete verification additionally uses a local C++17 compiler. No external dataset is required by the theorem or verification chain.
+
+3. Research comparison
+
+The comparison material under `04_Research_Context/` is independently written, category-level, and non-bibliographic. It does not reproduce third-party research text, figures, tables, datasets, or software source. Literature comparison is not a mathematical proof dependency.
+
+4. Workflow references
+
+The repository workflow may invoke platform-maintained automation actions by reference. Their source code is not vendored into this repository and remains governed by its own terms.
+
+5. License texts
+
+The complete Apache License 2.0 text and Creative Commons Attribution-NonCommercial 4.0 International legal code are included under `LICENSES/` for local reference. Those texts remain governed by their issuing organizations.
+
+6. Mathematical content boundary
+
+Copyright and software/documentation licenses govern project-authored expression and implementation. They do not assert ownership of mathematical facts, abstract theorem statements, equations, standard mathematical methods, independently stated reference facts, or independently developed proofs.
